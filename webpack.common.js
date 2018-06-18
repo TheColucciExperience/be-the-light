@@ -1,8 +1,9 @@
 
 // Getting all necessary loaders and plugins
 
-const path = require( 'path' ),  
-  HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+const path = require( 'path' ),
+  HtmlWebpackPlugin = require( 'html-webpack-plugin' ),
+  CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
 module.exports = {
   entry: {
@@ -21,19 +22,21 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        use: [ 'file-loader' ]
       }
     ]
   },
-  plugins: [    
+  plugins: [
     new HtmlWebpackPlugin( {
       title: 'Plugin Output',
       template: 'src/index.html',
       inject: false
-    } )
+    } ),
+    new CopyWebpackPlugin( [
+      {
+        from: './src/images',
+        to: './images'
+      }
+    ] )
   ],
   output: {
     filename: '[name].bundle.js',
