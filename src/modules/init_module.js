@@ -3,6 +3,10 @@
 
 const THREE = require( 'three' );
 
+// Importing Orbit Controls for drag and drop interaction
+
+import OrbitControls from 'orbit-controls-es6';
+
 /**
   * This function will init the application and return an interface
   * object containing the main interface properties.
@@ -27,7 +31,13 @@ function init() {
       floor: null
     },
     light: null
-  };  
+  };
+
+  // Orbit Controls
+
+  interfaceCtrl.control = new OrbitControls(
+    interfaceCtrl.camera, document.querySelector( '.main-canvas' )
+  );
 
   // Settings for interface contents
 
