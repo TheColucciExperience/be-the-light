@@ -5,12 +5,16 @@
 
 const THREE = require( 'three' );
 
+// Importing markup, styles and modules
+
 import './index.html'
 import './scss/styles.scss';
 import init from './modules/init_module.js';
 import createObjects from './modules/create-objects_module.js';
 import render from './modules/render_module.js';
 import handleWindowResize from './modules/handle-window-resize_module.js';
+import createLights from './modules/create-lights_module.js';
+import handleLightControl from './modules/handle-light-control_module.js';
 
 window.addEventListener( 'load', function someAction() {
 
@@ -20,9 +24,14 @@ window.addEventListener( 'load', function someAction() {
 
   createObjects( interfaceCtrl );
 
-  // Function to handle window resize
+  // Creating lights
+
+  createLights( interfaceCtrl );  
+
+  // Functions to handle window resize and light control
 
   handleWindowResize( window, interfaceCtrl );
+  handleLightControl( window, interfaceCtrl.lights.pointLight );
 
   // Starting render loop
 
@@ -30,21 +39,13 @@ window.addEventListener( 'load', function someAction() {
 
   // **** Temporary tests
 
-  const boxGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+  const boxGeometry = new THREE.BoxGeometry( 20, 20, 20 );
   const boxMaterial = new THREE.MeshStandardMaterial( { color: 0xff0000 } );
   const box = new THREE.Mesh( boxGeometry, boxMaterial );
-  box.position.y += 50;
+  box.position.y += 10;
   box.castShadow = true;
   box.receiveShadow = true;
 
-  // To see things before official light gets finished
-
-  const light = new THREE.PointLight( 0xffffff, 1 );
-  light.position.set( 100, 200, 0 );
-  light.castShadow = true;
-
-  interfaceCtrl.scene.add( box, light );
-
-  interfaceCtrl.renderer.render( interfaceCtrl.scene, interfaceCtrl.camera );
+  interfaceCtrl.scene.add( box );
 
 } );

@@ -3,8 +3,6 @@
 
 const THREE = require( 'three' );
 
-// Importing floor texture, bumpmap and roughness map
-
 // This function will create the objects that compose the scene
 
 function createObjects(interfaceCtrl) {
@@ -25,7 +23,8 @@ function createObjects(interfaceCtrl) {
 		roughness: 0.8,
 		color: 0xffffff,
 		metalness: 0.2,
-		bumpScale: 0.0005
+		bumpScale: 0.0005,
+    side: THREE.DoubleSide
 	});
 
   // Loading floor texture , bump map and roughness map
@@ -70,7 +69,7 @@ function createObjects(interfaceCtrl) {
    */
 
   interfaceCtrl.objects.floor.rotation.x -= Math.PI / 2;
-  interfaceCtrl.objects.floor.receiveShadow = true;  
+  interfaceCtrl.objects.floor.receiveShadow = true;
 
   // Adding objects to scene
 

@@ -2,9 +2,6 @@
 // Getting THREEJS and Orbit Control
 
 const THREE = require( 'three' );
-
-// Importing Orbit Controls for drag and drop interaction
-
 import OrbitControls from 'orbit-controls-es6';
 
 /**
@@ -30,14 +27,16 @@ function init() {
     objects: {
       floor: null
     },
-    light: null
+    lights: {}
   };
 
-  // Orbit Controls
+  // Interface orbit controls and it's configurations
 
-  interfaceCtrl.control = new OrbitControls(
+  interfaceCtrl.controls = new OrbitControls(
     interfaceCtrl.camera, document.querySelector( '.main-canvas' )
   );
+  interfaceCtrl.controls.enableKeys = false;
+  interfaceCtrl.controls.enablePan = false;
 
   // Settings for interface contents
 
@@ -47,14 +46,15 @@ function init() {
 	interfaceCtrl.renderer.gammaInput = true;
 	interfaceCtrl.renderer.gammaOutput = true;
   interfaceCtrl.renderer.shadowMap.enabled = true;
+  // To allow for very bright scenes.
+  interfaceCtrl.renderer.toneMappingExposure = .65;
 	interfaceCtrl.renderer.toneMapping = THREE.ReinhardToneMapping;
 	interfaceCtrl.renderer.setPixelRatio( window.devicePixelRatio );
 	interfaceCtrl.renderer.setSize( window.innerWidth, window.innerHeight );
 
   // Camera initial position settings
 
-  interfaceCtrl.camera.position.set( 300, 500, 400 );
-  interfaceCtrl.camera.lookAt( 0, 0, 0 );
+  interfaceCtrl.camera.position.set( 0, 150, 100 );
 
   // Returning interface control object
 
