@@ -35,17 +35,7 @@ window.addEventListener( 'load', function someAction() {
 
   // Starting render loop
 
-  render( interfaceCtrl );
+  render( interfaceCtrl );  
 
-  // **** Temporary tests
-
-  const boxGeometry = new THREE.BoxGeometry( 20, 20, 20 );
-  const boxMaterial = new THREE.MeshStandardMaterial( { color: 0xff0000 } );
-  const box = new THREE.Mesh( boxGeometry, boxMaterial );
-  box.position.y += 10;
-  box.castShadow = true;
-  box.receiveShadow = true;
-
-  interfaceCtrl.scene.add( box );
 
 } );

@@ -25,8 +25,13 @@ function init() {
     ),
     scene: new THREE.Scene(),
     objects: {
-      floor: null
+      floor: null,
+      randomObjects: []
     },
+    info: {
+      objectsSpace: 100,
+      floorSideLength: 500
+    }
     lights: {}
   };
 
