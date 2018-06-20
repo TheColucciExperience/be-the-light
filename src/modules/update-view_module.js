@@ -1,24 +1,24 @@
 
-// Importing utility function
+// Importing utility function and add traveled distance function
 
 import getLightBoundariesResult from './get-light-boundaries-result_module.js';
+import addTraveledDistance from './add-traveled-distance_module.js';
 
 /**
   * This function will update the position of the light bulb in case the
   * user is moving it
   */
 
-function updateView(light, camera, cameraControls) {
+function updateView(light, camera, cameraControls, speed, userData) {
 
   /**
     * This is the azimuthal angle for the camera. We'll need this to calculate
     * the left and right movements of the light based on the camera's angle.
     * We'll also get the light speed to compute the right distance to move in
-    * the appropriate directions
+    * the appropriate directions.
     */
 
-  const angle = cameraControls.getAzimuthalAngle(),
-    speed = light.bulbSpeed;
+  const angle = cameraControls.getAzimuthalAngle();
 
   if ( light.userControl.movingLeft ) {
 
@@ -26,6 +26,7 @@ function updateView(light, camera, cameraControls) {
 
     if ( getLightBoundariesResult( light ) ) {
       moveObj( 'left', camera, angle, speed );
+      addTraveledDistance( userData, speed );
     }
 
   }
@@ -36,6 +37,7 @@ function updateView(light, camera, cameraControls) {
 
     if ( getLightBoundariesResult( light ) ) {
       moveObj( 'right', camera, angle, speed );
+      addTraveledDistance( userData, speed );
     }
 
   }
@@ -46,6 +48,7 @@ function updateView(light, camera, cameraControls) {
 
     if ( getLightBoundariesResult( light ) ) {
       moveObj( 'forward', camera, angle, speed );
+      addTraveledDistance( userData, speed );
     }
 
   }
@@ -56,6 +59,7 @@ function updateView(light, camera, cameraControls) {
 
     if ( getLightBoundariesResult( light ) ) {
       moveObj( 'backward', camera, angle, speed );
+      addTraveledDistance( userData, speed );
     }
 
   }
@@ -79,7 +83,7 @@ function updateView(light, camera, cameraControls) {
 
 function moveObj(direction, obj, angle, speed) {
 
-  switch (direction) {
+  switch ( direction ) {
 
     case 'forward':
       obj.position.z -= speed * Math.cos( angle );

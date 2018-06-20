@@ -1,4 +1,8 @@
 
+// Requiring THREEJS
+
+const THREE = require( 'three' );
+
 // This function will create the scene floor
 
 function createFloor(interfaceCtrl) {

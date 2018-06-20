@@ -20,14 +20,15 @@ function createLights(interfaceCtrl) {
 
   interfaceCtrl.lights.pointLight = {
     bulb: new THREE.PointLight( 0xffee88, 1, 150, 2 ),
-    bulbPower: 100000,
+    bulbPower: interfaceCtrl.levels[ interfaceCtrl.user.level ].lightPower,
     bulbGeometry: new THREE.SphereBufferGeometry( 1.2, 100, 100 ),
     bulbMaterial: new THREE.MeshStandardMaterial( {
       emissive: 0xffffee,
       emissiveIntensity: 1,
       color: 0x000000
     }),
-    bulbSpeed: .5,
+    bulbSpeed: interfaceCtrl.levels[ interfaceCtrl.user.level ].lightSpeed,
+    bulbBias: -.001,
     userControl: {
       movingLeft: false,
       movingRight: false,
@@ -46,6 +47,8 @@ function createLights(interfaceCtrl) {
   ) );
   interfaceCtrl.lights.pointLight.bulb.position.set( 0, 50, 0 );
   interfaceCtrl.lights.pointLight.bulb.castShadow = true;
+  interfaceCtrl.lights.pointLight.bulb.shadow.bias =
+    interfaceCtrl.lights.pointLight.bulbBias;
 
   // Adding lights to scene
 

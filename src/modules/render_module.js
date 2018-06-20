@@ -3,6 +3,7 @@
 
 import updateView from './update-view_module.js';
 import checkLightBoundaries from './check-light-boundaries_module.js';
+import checkForAllowUpgrade from  './check-for-allow-upgrade_module.js';
 
 /**
   * This function will render the 3D space continously
@@ -25,12 +26,18 @@ function render(interfaceCtrl) {
   updateView(
     interfaceCtrl.lights.pointLight,
     interfaceCtrl.camera,
-    interfaceCtrl.controls
+    interfaceCtrl.controls,
+    interfaceCtrl.levels[ interfaceCtrl.user.level ].lightSpeed,
+    interfaceCtrl.user
   );
 
   // Checking light boundaries
 
-  checkLightBoundaries( interfaceCtrl.lights.pointLight );  
+  checkLightBoundaries( interfaceCtrl.lights.pointLight );
+
+  // Checking if we can allow upgrade
+
+  checkForAllowUpgrade( interfaceCtrl.user );
 
   // Rendering the scene
 

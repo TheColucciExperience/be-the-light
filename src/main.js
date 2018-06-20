@@ -26,16 +26,20 @@ window.addEventListener( 'load', function someAction() {
 
   // Creating lights
 
-  createLights( interfaceCtrl );  
+  createLights( interfaceCtrl );
 
-  // Functions to handle window resize and light control
+  // Functions to handle window resize, light control and light upgrade
 
   handleWindowResize( window, interfaceCtrl );
-  handleLightControl( window, interfaceCtrl.lights.pointLight );
+  handleLightControl(
+    window,
+    interfaceCtrl.lights.pointLight,
+    interfaceCtrl.user,
+    interfaceCtrl.levels
+  );
 
   // Starting render loop
 
-  render( interfaceCtrl );  
-
+  render( interfaceCtrl );
 
 } );

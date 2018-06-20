@@ -30,9 +30,27 @@ function init() {
     },
     info: {
       objectsSpace: 100,
-      floorSideLength: 500
-    }
-    lights: {}
+      floorSideLength: 1000
+    },
+    lights: {},
+    user: {
+      level: 0,
+      distanceTraveled: 0,
+      upgradeStock: 0
+    },
+    levels: [
+      {
+       lightSpeed: .5,
+       lightPower: 50000
+      }, {
+       lightSpeed: .8,
+       lightPower: 1000000
+      }, {
+       lightSpeed: 1.2,
+       lightPower: 200000
+      }
+    ]
+
   };
 
   // Interface orbit controls and it's configurations
@@ -42,6 +60,8 @@ function init() {
   );
   interfaceCtrl.controls.enableKeys = false;
   interfaceCtrl.controls.enablePan = false;
+  interfaceCtrl.controls.minDistance = 50;
+  interfaceCtrl.controls.maxDistance = 500;
 
   // Settings for interface contents
 
