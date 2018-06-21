@@ -5,17 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,
     shrink-to-fit=no"/>
     <title>Be The Light</title>
+    <link href="https://fonts.googleapis.com/css?family=Eater|Source+Sans+Pro"
+    rel="stylesheet"/>
   </head>
-  <body>
+  <body class="b-body">
 
-    <h1 class="sr-only">Welcome to Be The Light 3D Application</h1>
+    <h1 class="sr-only">Welcome to Be The Light 3D Application.</h1>
 
-    <canvas class="main-canvas">
+    <h2 class="sr-only">
+      Warning: this application is not optimized for users with visual
+      disabilities.
+    </h2>
+
+    <canvas class="b-main-canvas">
       <h2>
         Sorry! Your browser doesn't have support for WebGL.
         Try getting a modern one!
       </h2>
     </canvas>
+
+    <div class="b-greetings-container js-greetings-container">
+
+      <section class="b-greetings-section js-greetings-section">
+        <h2 class="b-greetings-section__title">Time to be the light</h2>
+        <p class="b-greetings-section__text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <button class="b-greetings-btn js-greetings-btn">Got it!</button>
+      </section>
+
+      <div class="b-greetings-container__shadow-layer"></div>
+
+    </div>
+
+    <div class="b-input-container">
+
+      <button type="button" class="b-input-btn">
+        <label class="b-input-btn__label" for="lightColor">
+          Light Color
+          <input class="b-input-btn__input js-light-color-input" id="lightColor"
+          type="color" name="light" value="#ffffee"/>
+        </label>
+      </button>
+
+    </div>
+
+    <div class="b-messages-container" aria-live="assertive"
+    aria-relevant="additions">
+    </div>
 
     <script src="app.bundle.js"></script>
 

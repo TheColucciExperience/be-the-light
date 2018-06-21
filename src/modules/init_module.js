@@ -15,7 +15,7 @@ function init() {
 
   const interfaceCtrl = {
     renderer: new THREE.WebGLRenderer( {
-      canvas: document.querySelector( '.main-canvas' )
+      canvas: document.querySelector( '.b-main-canvas' )
     } ),
     camera: new THREE.PerspectiveCamera(
       70,                                         // FOV
@@ -36,7 +36,8 @@ function init() {
     user: {
       level: 0,
       distanceTraveled: 0,
-      upgradeStock: 0
+      upgradeStock: 0,
+      canMove: false
     },
     levels: [
       {
@@ -44,7 +45,7 @@ function init() {
        lightPower: 50000
       }, {
        lightSpeed: .8,
-       lightPower: 1000000
+       lightPower: 100000
       }, {
        lightSpeed: 1.2,
        lightPower: 200000
@@ -56,7 +57,7 @@ function init() {
   // Interface orbit controls and it's configurations
 
   interfaceCtrl.controls = new OrbitControls(
-    interfaceCtrl.camera, document.querySelector( '.main-canvas' )
+    interfaceCtrl.camera, document.querySelector( '.b-main-canvas' )
   );
   interfaceCtrl.controls.enableKeys = false;
   interfaceCtrl.controls.enablePan = false;

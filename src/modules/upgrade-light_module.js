@@ -6,9 +6,10 @@ function upgradeLight(userData, lightObj, levels) {
   // Upgrading user level and updating light's properties
 
   userData.level++;
-  lightObj.bulb.bulbSpeed = levels[ userData.level ].lightSpeed;
-  lightObj.bulb.bulbPower = levels[ userData.level ].lightPower;
-  console.log( 'upgraded' );
+  userData.upgradeStock--;
+  lightObj.bulbSpeed = levels[ userData.level ].lightSpeed;
+  lightObj.bulbPower = levels[ userData.level ].lightPower;
+  lightObj.bulb.power = lightObj.bulbPower; 
 
   // Update for DOM manipulations later
 

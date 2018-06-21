@@ -48,7 +48,7 @@ function keyHandler(e, lightObj, userData, levels, isActivation) {
     case e.key === 's' || e.key === 'S':
       lightObj.userControl.movingDown = isActivation;
       break;
-    case ( e.key === ' ' || e.key === 'u' || e.key === 'U' ) &&
+    case ( e.key === 'u' || e.key === 'U' ) &&
            userData.upgradeStock > 0:
       upgradeLight( userData, lightObj, levels );
       break;

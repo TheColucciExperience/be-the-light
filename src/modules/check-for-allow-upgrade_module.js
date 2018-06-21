@@ -1,4 +1,8 @@
 
+// Importing module to create messages to the user
+
+import createMessage from './create-message_module.js';
+
 /**
   * This function will check if the user can upgrade based on the distance
   * traveled. If he can, we augment the upgrade stock.
@@ -18,14 +22,14 @@ const checkForAllowUpgrade = (function returnAllowUpgradeChecker() {
         distanceRequired: 1000
       }, {
         upgradeAllowed: false,
-        distanceRequired: 10000
+        distanceRequired: 8000
       }
     ]
   }
 
   // Returning actual checker
 
-  return function upgradeChecker(userData) {    
+  return function upgradeChecker(windowObj, userData) {
 
     const levelToUpgrade = upgradeReference.levels[ upgradeReference.upgradeIndex ];
 
@@ -37,7 +41,7 @@ const checkForAllowUpgrade = (function returnAllowUpgradeChecker() {
       levelToUpgrade.upgradeAllowed = true;
       upgradeReference.upgradeIndex++;
       userData.upgradeStock++;
-      console.log( 'ok' );
+      createMessage( 'Upgrade Available', '', true, 4000, windowObj );
     }
 
   }
