@@ -163,12 +163,12 @@ $textFont: 'Source Sans Pro', sans-serif;
   }
   &__kbd {
     display: inline-block;
-    padding: .1rem .2rem;   
+    padding: .1rem .2rem;
     font-weight: 700;
     text-align: center;
     vertical-align: center;
     color: #111;
-    background-color: #fff;    
+    background-color: #fff;
   }
   &__icon {
     display: block;
@@ -213,7 +213,7 @@ $textFont: 'Source Sans Pro', sans-serif;
 
 // Styles for input box
 
-.b-input-box {  
+.b-input-box {
   background-color: #111;
   box-shadow: 1px 2px 3px #111;
   &__label {
@@ -265,7 +265,7 @@ $textFont: 'Source Sans Pro', sans-serif;
   color: #fff;
   background-color: #222;
   transition-duration: .4s;
-  box-shadow: 2px 2px 3px #111;  
+  box-shadow: 2px 2px 3px #111;
   &__title {
     font: {
       family: $mainFont;
@@ -276,5 +276,49 @@ $textFont: 'Source Sans Pro', sans-serif;
     @media (min-width: 576px) { text-align: left; }
     &:not(:last-child) { margin-bottom: .8rem; }
   }
-  &__text { font-family: $textFont; }  
+  &__text { font-family: $textFont; }
+}
+
+// Styles for small controller, narrow viewports only
+
+.b-small-controller-container {
+  position: fixed;
+  z-index: 50;
+  bottom: 5vh;
+  left: 20vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 60vw;
+  @media (min-width: 576px) {
+    left: 30vw;
+    width: 40vw;
+    @media (min-width: 768px) { display: none; }
+  }
+  &__btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: .2rem .6rem;
+    color: #fff;
+    background-color: #111;
+    box-shadow: 1px 2px 3px transparentize(#111, .4);
+    opacity: .8;
+    transition-duration: .2s;
+    &--small {
+      padding: .4rem;
+      font-size: 3rem;
+    }
+    &--large {
+      padding: .1rem .5rem;
+      font-size: 3.5rem;
+    }
+  }
+}
+
+.b-small-controller-center-box {
+  display: flex;
+  align-items: center;
 }

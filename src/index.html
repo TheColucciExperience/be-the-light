@@ -6,7 +6,10 @@
     shrink-to-fit=no"/>
     <title>Be The Light</title>
     <link href="https://fonts.googleapis.com/css?family=Eater|Source+Sans+Pro"
-    rel="stylesheet"/>    
+    rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous"/>
   </head>
   <body class="b-body">
 
@@ -32,20 +35,22 @@
           You are a solitary light wandering around an unknown place, full
           of mysterious objects you must explore. You must pay careful attention
           to their shadows and forms, so to gain knowledge about the world you
-          are in. Move the light with the keyboard arrows.         
-          Use 
+          are in. Move the light with the keyboard arrows.
+          Use
           <kbd class="b-greetings-section__kbd">
             W
           </kbd> and
           <kbd class="b-greetings-section__kbd">
             S
-          </kbd> to move the light up and down. Use 
+          </kbd> to move the light up and down. Use
           <kbd class="b-greetings-section__kbd">
             U
           </kbd>, to upgrade the
-          light's power when you've traveled enough. For small viewports use
-          the small controller at the bottom of the screen. Remember carefully,
-          this world is very dark. It needs you to be the light.
+          light's power when you've traveled enough. Use the mouse to control
+          the camera position and zoom. For small viewports use the small
+          controller at the bottom of the screen, use the arrows to move the
+          light and the circle to upgrade it. Remember carefully, this world is
+          very dark. It needs you to be the light.
         </p>
         <button class="b-greetings-btn js-greetings-btn">Got it!</button>
       </section>
@@ -68,6 +73,40 @@
 
     <div class="b-messages-container" aria-live="assertive"
     aria-relevant="additions">
+    </div>
+
+    <div class="b-small-controller-container">
+
+      <button class="b-small-controller-container__btn
+      b-small-controller-container__btn--large js-sm-control-btn" type="button"
+      data-command="forward">
+        <span class="fas fa-caret-up"></span>
+      </button>
+
+      <div class="b-small-controller-center-box">
+        <button class="b-small-controller-container__btn
+        b-small-controller-container__btn--large js-sm-control-btn" type="button"
+        data-command="left">
+          <span class="fas fa-caret-left"></span>
+        </button>
+        <button class="b-small-controller-container__btn
+        b-small-controller-container__btn--small js-sm-control-btn" type="button"
+        data-command="upgrade">
+          <span class="fas fa-circle"></span>
+        </button>
+        <button class="b-small-controller-container__btn
+        b-small-controller-container__btn--large js-sm-control-btn" type="button"
+        data-command="right">
+          <span class="fas fa-caret-right"></span>
+        </button>
+      </div>
+
+      <button class="b-small-controller-container__btn
+      b-small-controller-container__btn--large js-sm-control-btn" type="button"
+      data-command="backward">
+        <span class="fas fa-caret-down"></span>
+      </button>
+
     </div>
 
     <script src="app.bundle.js"></script>

@@ -18,6 +18,7 @@ import handleLightControl from './modules/handle-light-control_module.js';
 import showGreeting from './modules/show-greeting_module.js';
 import handleHideGreeting from './modules/handle-hide-greeting_module.js';
 import handleLightColorChange from './modules/handle-light-color-change_module.js';
+import handleSmallController from './modules/handle-small-controller_module.js';
 
 window.addEventListener( 'load', function someAction() {
 
@@ -45,6 +46,15 @@ window.addEventListener( 'load', function someAction() {
 
   showGreeting( window );
   handleHideGreeting( window, interfaceCtrl.user );
+
+  // Function to handle small controller
+
+  handleSmallController(
+    window,
+    interfaceCtrl.user,
+    interfaceCtrl.lights.pointLight,
+    interfaceCtrl.levels
+  );
 
   // This function will handle changing the light color
 

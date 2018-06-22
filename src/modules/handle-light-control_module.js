@@ -2,10 +2,11 @@
 // Importing upgrade light function
 
 import upgradeLight from './upgrade-light_module.js';
+import moveLight from './move-light_module.js';
 
 /**
   * This function will add the controls listeners to the window and trigger
-  * the light properties accordingly
+  * the light properties accordingly.
   */
 
 function handleLightControl(windowObj, light, userData, levels) {
@@ -31,16 +32,16 @@ function keyHandler(e, lightObj, userData, levels, isActivation) {
   switch (true) {
 
     case e.key === 'ArrowUp':
-      lightObj.userControl.movingForward = isActivation;
+      moveLight( 'forward', lightObj, isActivation );
       break;
     case e.key === 'ArrowDown':
-      lightObj.userControl.movingBackward = isActivation;
+      moveLight( 'backward', lightObj, isActivation );
       break;
     case e.key === 'ArrowLeft':
-      lightObj.userControl.movingLeft = isActivation;
+      moveLight( 'left', lightObj, isActivation );
       break;
-    case e.key === 'ArrowRight':
-      lightObj.userControl.movingRight = isActivation;
+    case e.key === 'ArrowRight':      
+      moveLight( 'right', lightObj, isActivation );
       break;
     case e.key === 'w' || e.key === 'W':
       lightObj.userControl.movingUp = isActivation;

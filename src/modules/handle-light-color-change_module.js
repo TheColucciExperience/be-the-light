@@ -14,7 +14,7 @@ function handleLightColorChange(windowObj, lightObj) {
     .querySelector( '.js-light-color-input' )
     .addEventListener(
       'change',
-      function callLightColorChange(e) {        
+      function callLightColorChange(e) {
         changeLightColor( lightObj, e.target.value );
       }
     );
@@ -22,14 +22,7 @@ function handleLightColorChange(windowObj, lightObj) {
 }
 
 function changeLightColor(lightObj, lightColor) {
-
   lightObj.bulb.color.set( lightColor );
-
-  // Not working, adjust later
-
-  lightObj.bulbMaterial.emissive.set( lightColor );
-  lightObj.bulbMaterial.needsUpdate = true;
-
 }
 
 export default handleLightColorChange;
