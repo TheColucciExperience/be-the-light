@@ -6,8 +6,7 @@
 
 function createMessage(
   title = 'Upgrade Available',
-  text = '',
-  isAnimated = false,
+  text = '',  
   timeout = 4000,
   windowObj
 ) {
@@ -22,11 +21,7 @@ function createMessage(
   // Adding classes to elements
 
   messageBox.classList.add( 'b-message-box' );
-  boxTitle.classList.add( 'b-message-box__title' );
-
-  if ( isAnimated ) {
-    messageBox.classList.add( 'b-message-box--animated' );
-  }
+  boxTitle.classList.add( 'b-message-box__title' );  
 
   // Adding content to title
 
@@ -50,7 +45,7 @@ function createMessage(
 
   // Animating message box
 
-  messageBox.style.animation = 'slideFromLeft .5s ease forwards';
+  messageBox.style.animation = 'slideFadeInFromLeft .5s ease forwards';
 
   // Box timeout variable to check for minimum timeout length
 
@@ -60,7 +55,7 @@ function createMessage(
 
   window.setTimeout( function startBoxHideAnimation() {
 
-    messageBox.style.animation = 'slideToLeft .5s ease forwards';
+    messageBox.style.animation = 'slideFadeOutToLeft .5s ease forwards';
 
     // Timeout to remove box from it's container
 

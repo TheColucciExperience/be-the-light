@@ -68,6 +68,11 @@ function createRandomObjects(interfaceCtrl, objectsSpace, floorLength) {
 
 			interfaceCtrl.objects.randomObjects.push( object );
 
+			// We won't change the object's position, so we disable auto update
+
+			object.matrixAutoUpdate  = false;
+			object.updateMatrix();
+
 			// Finally adding object to the scene
 
 			interfaceCtrl.scene.add( object );

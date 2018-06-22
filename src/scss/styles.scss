@@ -31,14 +31,26 @@ $textFont: 'Source Sans Pro', sans-serif;
   to { transform: translate(0, -10rem); }
 }
 
-@keyframes slideFromLeft {
-  from { transform: translate(-10rem, 0); }
-  to { transform: translate(0, 0); }
+@keyframes slideFadeInFromLeft {
+  from {
+    transform: translate(-10rem, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
 }
 
-@keyframes slideToLeft {
-  from { transform: translate(0, 0); }
-  to { transform: translate(-10rem, 0); }
+@keyframes slideFadeOutToLeft {
+  from {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-10rem, 0);
+    opacity: 0;
+  }
 }
 
 @keyframes alternateColor {
@@ -128,7 +140,7 @@ $textFont: 'Source Sans Pro', sans-serif;
       padding: 1.5rem;
       @media (min-width: 992px) {
         max-width: 50vw;
-        @media (min-width: 1200px) { max-width: 40vw; }
+        @media (min-width: 1200px) { max-width: 45vw; }
       }
     }
   }
@@ -226,7 +238,7 @@ $textFont: 'Source Sans Pro', sans-serif;
       width: 45vw;
       @media (min-width: 992px) {
         width: 35vw;
-        @media (min-width: 1200px) { width: 25vw; }
+        @media (min-width: 1200px) { width: 30vw; }
       }
     }
   }
@@ -239,8 +251,7 @@ $textFont: 'Source Sans Pro', sans-serif;
   color: #fff;
   background-color: #222;
   transition-duration: .4s;
-  box-shadow: 2px 2px 3px #111;
-  &--animated { animation: alternateColor 1s ease-in-out alternate infinite; }
+  box-shadow: 2px 2px 3px #111;  
   &__title {
     font: {
       family: $mainFont;

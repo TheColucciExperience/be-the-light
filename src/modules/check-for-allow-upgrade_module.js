@@ -41,7 +41,7 @@ const checkForAllowUpgrade = (function returnAllowUpgradeChecker() {
       levelToUpgrade.upgradeAllowed = true;
       upgradeReference.upgradeIndex++;
       userData.upgradeStock++;
-      createMessage( 'Upgrade Available', '', true, 4000, windowObj );
+      createMessage( 'Upgrade Available', '', 6000, windowObj );
     }
 
   }
