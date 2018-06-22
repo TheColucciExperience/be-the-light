@@ -161,6 +161,21 @@ $textFont: 'Source Sans Pro', sans-serif;
     font-family: $textFont;
     letter-spacing: .05rem;
   }
+  &__kbd {
+    display: inline-block;
+    padding: .1rem .2rem;   
+    font-weight: 700;
+    text-align: center;
+    vertical-align: center;
+    color: #111;
+    background-color: #fff;    
+  }
+  &__icon {
+    display: block;
+    padding: .1rem;
+    font-size: 1.4rem;
+    line-height: 1rem;
+  }
 }
 
 // Styles for greetings button
@@ -198,8 +213,7 @@ $textFont: 'Source Sans Pro', sans-serif;
 
 // Styles for input box
 
-.b-input-btn {
-  border: none;
+.b-input-box {  
   background-color: #111;
   box-shadow: 1px 2px 3px #111;
   &__label {
@@ -262,5 +276,5 @@ $textFont: 'Source Sans Pro', sans-serif;
     @media (min-width: 576px) { text-align: left; }
     &:not(:last-child) { margin-bottom: .8rem; }
   }
-  &__text { font-family: $textFont; }
+  &__text { font-family: $textFont; }  
 }

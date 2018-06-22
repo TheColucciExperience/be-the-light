@@ -6,7 +6,7 @@
     shrink-to-fit=no"/>
     <title>Be The Light</title>
     <link href="https://fonts.googleapis.com/css?family=Eater|Source+Sans+Pro"
-    rel="stylesheet"/>
+    rel="stylesheet"/>    
   </head>
   <body class="b-body">
 
@@ -29,7 +29,23 @@
       <section class="b-greetings-section js-greetings-section">
         <h2 class="b-greetings-section__title">Time to be the light</h2>
         <p class="b-greetings-section__text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          You are a solitary light wandering around an unknown place, full
+          of mysterious objects you must explore. You must pay careful attention
+          to their shadows and forms, so to gain knowledge about the world you
+          are in. Move the light with the keyboard arrows.         
+          Use 
+          <kbd class="b-greetings-section__kbd">
+            W
+          </kbd> and
+          <kbd class="b-greetings-section__kbd">
+            S
+          </kbd> to move the light up and down. Use 
+          <kbd class="b-greetings-section__kbd">
+            U
+          </kbd>, to upgrade the
+          light's power when you've traveled enough. For small viewports use
+          the small controller at the bottom of the screen. Remember carefully,
+          this world is very dark. It needs you to be the light.
         </p>
         <button class="b-greetings-btn js-greetings-btn">Got it!</button>
       </section>
@@ -40,13 +56,13 @@
 
     <div class="b-input-container">
 
-      <button type="button" class="b-input-btn">
-        <label class="b-input-btn__label" for="lightColor">
+      <div class="b-input-box">
+        <label class="b-input-box__label" for="lightColor">
           Light Color
-          <input class="b-input-btn__input js-light-color-input" id="lightColor"
+          <input class="b-input-box__input js-light-color-input" id="lightColor"
           type="color" name="light" value="#ffffee"/>
         </label>
-      </button>
+      </div>
 
     </div>
 
