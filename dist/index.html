@@ -5,17 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,
     shrink-to-fit=no"/>
     <title>Be The Light</title>
+    <link href="https://fonts.googleapis.com/css?family=Eater|Source+Sans+Pro"
+    rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous"/>
   </head>
-  <body>
+  <body class="b-body">
 
-    <h1 class="sr-only">Welcome to Be The Light 3D Application</h1>
+    <h1 class="sr-only">Welcome to Be The Light 3D Application.</h1>
 
-    <canvas class="main-canvas">
+    <h2 class="sr-only">
+      Warning: this application is not optimized for users with visual
+      disabilities.
+    </h2>
+
+    <canvas class="b-main-canvas">
       <h2>
         Sorry! Your browser doesn't have support for WebGL.
         Try getting a modern one!
       </h2>
     </canvas>
+
+    <div class="b-greetings-container js-greetings-container">
+
+      <section class="b-greetings-section js-greetings-section">
+        <h2 class="b-greetings-section__title">Time to be the light</h2>
+        <p class="b-greetings-section__text">
+          You are a solitary light wandering around an unknown place, full
+          of mysterious objects you must explore. You must pay careful attention
+          to their shadows and forms, so to gain knowledge about the world you
+          are in. Move the light with the keyboard arrows.
+          Use
+          <kbd class="b-greetings-section__kbd">
+            W
+          </kbd> and
+          <kbd class="b-greetings-section__kbd">
+            S
+          </kbd> to move the light up and down. Use
+          <kbd class="b-greetings-section__kbd">
+            U
+          </kbd>, to upgrade the
+          light's power when you've traveled enough. Use the mouse to control
+          the camera position and zoom. For small viewports use the small
+          controller at the bottom of the screen, use the arrows to move the
+          light and the circle to upgrade it. Remember carefully, this world is
+          very dark. It needs you to be the light.
+        </p>
+        <button class="b-greetings-btn js-greetings-btn">Got it!</button>
+      </section>
+
+      <div class="b-greetings-container__shadow-layer"></div>
+
+    </div>
+
+    <div class="b-input-container">
+
+      <div class="b-input-box">
+        <label class="b-input-box__label" for="lightColor">
+          Light Color
+          <input class="b-input-box__input js-light-color-input" id="lightColor"
+          type="color" name="light" value="#ffffee"/>
+        </label>
+      </div>
+
+    </div>
+
+    <div class="b-messages-container" aria-live="assertive"
+    aria-relevant="additions">
+    </div>
+
+    <div class="b-small-controller-container">
+
+      <button class="b-small-controller-container__btn
+      b-small-controller-container__btn--large js-sm-control-btn" type="button"
+      data-command="forward">
+        <span class="fas fa-caret-up"></span>
+      </button>
+
+      <div class="b-small-controller-center-box">
+        <button class="b-small-controller-container__btn
+        b-small-controller-container__btn--large js-sm-control-btn" type="button"
+        data-command="left">
+          <span class="fas fa-caret-left"></span>
+        </button>
+        <button class="b-small-controller-container__btn
+        b-small-controller-container__btn--small js-sm-control-btn" type="button"
+        data-command="upgrade">
+          <span class="fas fa-circle"></span>
+        </button>
+        <button class="b-small-controller-container__btn
+        b-small-controller-container__btn--large js-sm-control-btn" type="button"
+        data-command="right">
+          <span class="fas fa-caret-right"></span>
+        </button>
+      </div>
+
+      <button class="b-small-controller-container__btn
+      b-small-controller-container__btn--large js-sm-control-btn" type="button"
+      data-command="backward">
+        <span class="fas fa-caret-down"></span>
+      </button>
+
+    </div>
 
     <script src="app.bundle.js"></script>
 
